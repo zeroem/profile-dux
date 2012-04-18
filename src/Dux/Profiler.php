@@ -40,4 +40,8 @@ class Profiler
             }
         }
     }
+
+    public function getProfiles() {
+        return $this->profiles;
+    }
 }
