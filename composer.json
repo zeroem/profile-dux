@@ -7,7 +7,7 @@
             "email": "darrell.noice@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
     "autoload": {
         "psr-0": {
             "Dux": "src/"
