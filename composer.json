@@ -1,0 +1,16 @@
+{
+    "name": "zeroem/profile-dux",
+    "description": "A profiling utility to use in the absence of XDebug",
+    "authors": [
+        {
+            "name": "Darrell Hamilton",
+            "email": "darrell.noice@gmail.com"
+        }
+    ],
+    "require": {}
+    "autoload": {
+        "psr-0": {
+            "Dux": "src/"
+        }
+    }
+}
