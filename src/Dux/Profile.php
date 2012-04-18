@@ -16,10 +16,6 @@ class Profile
     }
 
     private function diff() {
-        return new MicroTime(
-            $this->end->getSeconds() - $this->start->getSeconds(),
-            $this->end->getMs() - $this->start->getMs()
-        );
+        return MicroTime::diff($this->end, $this->start);
     }
-
 }

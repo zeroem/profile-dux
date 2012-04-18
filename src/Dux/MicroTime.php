@@ -31,11 +31,10 @@ class MicroTime
         return $this->ms;
     }
 
-    public function inSeconds() {
-        return $this->seconds + ($this->ms / 1000);
-    }
-
-    public function inMs() {
-        return $this->ms + ($this->seconds * 1000);
+    static public function diff(MicroTime $a, MicroTime $b) {
+        return new MicroTimeInterval(
+            $a->getSeconds() - $b->getSeconds(),
+            $a->getMs() - $b->getMs()
+        );
     }
 }
