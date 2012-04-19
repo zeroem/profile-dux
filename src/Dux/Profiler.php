@@ -41,6 +41,15 @@ class Profiler
         }
     }
 
+    public function addProfile($start,$stop) {
+        $profile = new Profile();
+        $profile->start = new MicroTime($start);
+        $profile->end = new MicroTime($stop);
+
+        array_push($this->profiles, $profile);
+        return $this;
+    }
+    
     public function getProfiles() {
         return $this->profiles;
     }
