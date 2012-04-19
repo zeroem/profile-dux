@@ -4,9 +4,23 @@ namespace Dux;
 
 class MicroTime
 {
+    /**
+     * @var integer
+     */
     private $seconds;
+
+    /**
+     * @var integer
+     */
     private $ms;
 
+    /**
+     * Constructs a object representation of microtime data using either
+     * the default string format of micro time or seconds and ms offset
+     *
+     * @param string|int $seconds either a microtime string or the number of seconds since the Unix Epoch
+     * @param integer $ms milliseconds offset from $seconds
+     */
     public function __construct($seconds, $ms=null) {
         if(func_num_args() == 1) {
             $time = $seconds;
@@ -31,10 +45,18 @@ class MicroTime
         return $this->ms;
     }
 
-    static public function diff(MicroTime $a, MicroTime $b) {
+    /**
+     * Return a MicroTimeInterval representing the amount of time
+     * elapsed between two MicroTime Objects
+     *
+     * @param \Dux\MicroTime $end
+     * @param \Dux\MicroTime $start
+     * @return \Dux\MicroTimeInterval
+     */
+    static public function diff(MicroTime $end, MicroTime $start) {
         return new MicroTimeInterval(
-            $a->getSeconds() - $b->getSeconds(),
-            $a->getMs() - $b->getMs()
+            $end->getSeconds() - $start->getSeconds(),
+            $end->getMs() - $start->getMs()
         );
     }
 }
