@@ -12,6 +12,7 @@ class Mean implements AggregateInterface
     public function processProfile(Profile $prof) {
         $this->count++;
         $this->mean = $this->mean - ($this->mean - $prof->getElapsedMs()) / $this->count;
+        return $this;
     }
 
     public function renderAggregate() {

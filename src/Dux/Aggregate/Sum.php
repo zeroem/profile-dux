@@ -10,6 +10,7 @@ class Sum implements AggregateInterface
 
     public function processProfile(Profile $prof) {
         $this->sum += $prof->getElapsedMs();
+        return $this;
     }
 
     public function renderAggregate() {
