@@ -25,7 +25,7 @@ class MicroTime
         if(func_num_args() == 1) {
             $time = $seconds;
             if(is_string($time)) {
-                list($this->seconds, $this->ms) = explode(" ", $time);
+                list($this->ms, $this->seconds) = explode(" ", $time);
             } else {
                 throw new \InvalidArgumentException(
                     "Expected string, got " . gettype($time)
