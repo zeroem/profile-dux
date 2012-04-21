@@ -15,4 +15,12 @@ class MicroTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1005, $result->inMs());
         $this->assertEquals(1.005, $result->inSeconds());
     }
+
+    public function testFromString() {
+        $result = MicroTime::fromString("10.1 12345");
+
+        $this->assertInstanceOf('Dux\MicroTime',$result);
+        $this->assertEquals(10.1, $result->getMs());
+        $this->assertEquals(12345, $result->getSeconds());
+    }
 }
