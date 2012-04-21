@@ -18,7 +18,7 @@ class Maximum implements AggregateInterface
     }
 
     public function renderAggregate() {
-        return "Longest execution time: {$this->max}ms";
+        return "Maximum execution time: {$this->max}ms";
     }
 
     public function getAggregateValue() {

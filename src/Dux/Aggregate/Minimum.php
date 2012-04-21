@@ -18,7 +18,7 @@ class Minimum implements AggregateInterface
     }
 
     public function renderAggregate() {
-        return "Longest execution time: {$this->min}ms";
+        return "Minimum execution time: {$this->min}ms";
     }
 
     public function getAggregateValue() {
