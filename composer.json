@@ -1,6 +1,7 @@
 {
     "name": "zeroem/profile-dux",
     "description": "A profiling utility to use in the absence of XDebug",
+    "keywords": ["profiling","benchmarking"],
     "authors": [
         {
             "name": "Darrell Hamilton",
