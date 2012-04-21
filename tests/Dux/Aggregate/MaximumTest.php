@@ -7,7 +7,7 @@ use Dux\Profile;
 
 class MaximumTest extends \PHPUnit_Framework_TestCase
 {
-    public function testSum() {
+    public function testMaximum() {
         $max = new Maximum();
 
         $this->assertTrue(is_nan($max->getAggregateValue()));
