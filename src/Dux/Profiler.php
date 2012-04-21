@@ -19,7 +19,7 @@ class Profiler
         }
 
         $profile = new Profile();
-        $profile->start = new MicroTime($time);
+        $profile->start = MicroTime::fromString($time);
         array_push($this->stack,$profile);
 
         return $this;
@@ -37,7 +37,7 @@ class Profiler
         }
 
         $profile = array_pop($this->stack);
-        $profile->stop = new MicroTime($time);
+        $profile->stop = MicroTime::fromString($time);
         array_push($this->profiles,$profile);
 
         return $this;
@@ -75,8 +75,8 @@ class Profiler
      */
     public function addProfile($start,$end) {
         $profile = new Profile();
-        $profile->start = new MicroTime($start);
-        $profile->end = new MicroTime($end);
+        $profile->start = MicroTime::fromString($start);
+        $profile->end = MicroTime::fromString($end);
 
         array_push($this->profiles, $profile);
         return $this;

@@ -21,20 +21,9 @@ class MicroTime
      * @param string|int $seconds either a microtime string or the number of seconds since the Unix Epoch
      * @param integer $ms milliseconds offset from $seconds
      */
-    public function __construct($seconds, $ms=null) {
-        if(func_num_args() == 1) {
-            $time = $seconds;
-            if(is_string($time)) {
-                list($this->ms, $this->seconds) = explode(" ", $time);
-            } else {
-                throw new \InvalidArgumentException(
-                    "Expected string, got " . gettype($time)
-                );
-            }
-        } else {
-            $this->seconds = $seconds;
-            $this->ms = $ms;
-        }
+    public function __construct($seconds, $ms=0) {
+        $this->seconds = $seconds;
+        $this->ms = $ms;
     }
 
     public function getSeconds() {
@@ -43,6 +32,12 @@ class MicroTime
 
     public function getMs() {
         return $this->ms;
+    }
+
+    static public function fromString($str) {
+        $parts = explode(" ", $str);
+
+        return new MicroTime($parts[1], $parts[0]);
     }
 
     /**
