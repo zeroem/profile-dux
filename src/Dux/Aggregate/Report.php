@@ -6,11 +6,11 @@ use Dux\Profiler;
 
 class Report
 {
-    static public function processProfiler(Profiler $prof, AggregateInterface $agg) {
-        foreach($this->profiler->getProfiles() as $profile) {
-            $this->aggregator->processProfile($profile);
+    static public function generate(Profiler $profiler, AggregateInterface $aggregator) {
+        foreach($profiler->getProfiles() as $profile) {
+            $aggregator->processProfile($profile);
         }
 
-        return $agg;
+        return $aggregator;
     }
 }
