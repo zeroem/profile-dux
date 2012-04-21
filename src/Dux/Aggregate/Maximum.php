@@ -4,7 +4,7 @@ namespace Dux\Aggregate;
 
 use Dux\Profile;
 
-class Max implements AggregateInterface
+class Maximum implements AggregateInterface
 {
     private $max=NAN;
 

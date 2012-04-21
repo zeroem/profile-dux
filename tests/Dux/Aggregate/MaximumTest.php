@@ -2,13 +2,13 @@
 
 namespace Dux\Test\Aggregate;
 
-use Dux\Aggregate\Max;
+use Dux\Aggregate\Maximum;
 use Dux\Profile;
 
-class MaxTest extends \PHPUnit_Framework_TestCase
+class MaximumTest extends \PHPUnit_Framework_TestCase
 {
     public function testSum() {
-        $max = new Max();
+        $max = new Maximum();
 
         $this->assertTrue(is_nan($max->getAggregateValue()));
 
