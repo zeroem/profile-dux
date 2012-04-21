@@ -8,18 +8,18 @@ use Dux\Profile;
 class SumTest extends \PHPUnit_Framework_TestCase
 {
     public function testSum() {
-        $mean = new Sum();
+        $sum = new Sum();
 
-        $this->assertEquals(0,$mean->getAggregateValue());
+        $this->assertEquals(0,$sum->getAggregateValue());
 
-        $mean->processProfile($this->mockProfile(1));
-        $this->assertEquals(1,$mean->getAggregateValue());
+        $sum->processProfile($this->mockProfile(1));
+        $this->assertEquals(1,$sum->getAggregateValue());
 
-        $mean->processProfile($this->mockProfile(2));
-        $this->assertEquals(3,$mean->getAggregateValue());
+        $sum->processProfile($this->mockProfile(2));
+        $this->assertEquals(3,$sum->getAggregateValue());
 
-        $mean->processProfile($this->mockProfile(3));
-        $this->assertEquals(6,$mean->getAggregateValue());
+        $sum->processProfile($this->mockProfile(3));
+        $this->assertEquals(6,$sum->getAggregateValue());
     }
 
     private function mockProfile($elapsed) {
