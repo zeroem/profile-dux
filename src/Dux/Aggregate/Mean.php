@@ -22,4 +22,8 @@ class Mean implements AggregateInterface
     public function getAggregateValue() {
         return $this->mean;
     }
+
+    public function getCount() {
+        return $this->count;
+    }
 }
