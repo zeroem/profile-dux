@@ -15,8 +15,11 @@ for($i=0; $i < 10000; $i++) {
 
 $aggregate = new \Dux\Aggregate\GroupAggregate();
 $aggregate->addAggregate(new \Dux\Aggregate\Maximum());
-$aggregate->addAggregate(new \Dux\Aggregate\Median());
+$aggregate->addAggregate(new \Dux\Aggregate\Minimum());
 $aggregate->addAggregate(new \Dux\Aggregate\Mean());
+$aggregate->addAggregate(new \Dux\Aggregate\StandardDeviation());
+$aggregate->addAggregate(new \Dux\Aggregate\Median());
+$aggregate->addAggregate(new \Dux\Aggregate\Mode());
 $aggregate->addAggregate(new \Dux\Aggregate\Sum());
 
 echo \Dux\Aggregate\Report::generate($profiler,$aggregate)->renderAggregate();
